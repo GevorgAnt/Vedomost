@@ -5,7 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
-    @GetMapping("/login")
+    @GetMapping("/")
+    public String dashboard() {
+        return "dashboard";
+    }
+
+    @GetMapping(value = "/login", produces = "text/css")
     public String login() {
         return "login";
     }
